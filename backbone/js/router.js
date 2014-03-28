@@ -6,6 +6,7 @@ define(['backbone'], function(Backbone) {
             "test/:q": "test"     // #help/1
         },
         home: function() {
+            //new TestView();
             console.log('home');
         },
         search: function() {

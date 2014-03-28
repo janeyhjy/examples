@@ -5,7 +5,7 @@ require.config({
         "underscore": "underscore",
         "router": "router",
         'backbone': 'backbone',
-        "templates": "../views/",
+        "views": "../views/",
         "modes": "../modes/",
         "collections": "../collections/"
     },
