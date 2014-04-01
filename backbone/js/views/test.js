@@ -10,24 +10,75 @@ function(Backbone, TestModel, TestCollection, TestTmpl) {
             
         },
         initialize: function() {
-            new TestCollection().fetch({
-                success: function(collection, response) {
-                    console.log(collection, response);
+            var collection = new TestCollection();
+            
+            //get collection data
+
+            collection.fetch({
+                success: function(collection1, response) {
+                    // console.log(collection1, response);
+                    var names = collection.pluck("name");
+                    console.log('pluck: ' + names); //1
+                    //console.log('get', collection.get('name')); //undefined
+
+                    // collection delete
+                    _.invoke(collection.test(), 'destroy', {
+                        success: function() {
+                            //success handle
+                        },
+                        error: function() {
+                            console.log('delete from collection error');
+                        }
+                    }); 
+
                 },
                 error: function() {
                     console.log(2);
                 }
             });
-            /*
-            this.model.fetch({
-                success: function(model, data) {
-                    console.log(model, data);
-                },
-                error: function() {
-                    console.log('error');
-                }
-            }, );
-            */
+            
+            //1.create a model 
+            //2.add the model to collection
+
+            // collection.create([
+            //     {"name": "test1"},
+            //     {"name": "test2"},
+            //     {"name": "test3"}
+            // ], {
+            //     success: function() {
+            //         console.log('collection create success');
+            //         console.log("collection after create: ", collection);
+            //     }
+            // });
+
+            //get model data
+
+            // this.model.fetch({
+            //     success: function(model, data) {
+            //         console.log(model, data);
+            //     },
+            //     error: function() {
+            //         console.log('error');
+            //     }
+            // });
+
+            //update || add
+
+            // this.model.set({"a": 2222});
+            // this.model.save();
+
+            //delete urlRoot时有参数
+
+            // this.model.destroy({
+            //     success: function(model, response) {
+            //         console.log(model, response);
+            //         console.log('delete success');
+            //     },
+            //     error: function() {
+            //         console.log('delete error');
+            //     }
+            // });
+
             this.render();
         },
         render: function() {
