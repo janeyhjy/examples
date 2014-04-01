@@ -10,7 +10,14 @@ function(Backbone, TestModel, TestCollection, TestTmpl) {
             
         },
         initialize: function() {
-            new TestCollection().fetch();
+            new TestCollection().fetch({
+                success: function(collection, response) {
+                    console.log(collection, response);
+                },
+                error: function() {
+                    console.log(2);
+                }
+            });
             /*
             this.model.fetch({
                 success: function(model, data) {
@@ -20,7 +27,7 @@ function(Backbone, TestModel, TestCollection, TestTmpl) {
                     console.log('error');
                 }
             }, );
-*/
+            */
             this.render();
         },
         render: function() {
