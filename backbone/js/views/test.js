@@ -4,7 +4,7 @@ function(Backbone, TestModel, TestCollection, TestTmpl) {
         el: "#container",
         tagName: 'div',
         className:'test',
-        model: new TestModel(),
+        //model: TestModel, //当有collection时不需要model
         template: _.template(TestTmpl),
         events: {
             
