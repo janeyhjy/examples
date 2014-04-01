@@ -11,16 +11,19 @@ function(Backbone, TestModel, TestCollection, TestTmpl) {
         },
         initialize: function() {
             var collection = new TestCollection();
+
+            var _this = this;
             
             //get collection data
-
             collection.fetch({
                 success: function(collection1, response) {
                     // console.log(collection1, response);
                     var names = collection.pluck("name");
                     console.log('pluck: ' + names); //1
                     //console.log('get', collection.get('name')); //undefined
-
+                    
+                    _this.render(collection);
+                    
                     // collection delete
                     _.invoke(collection.test(), 'destroy', {
                         success: function() {
@@ -79,10 +82,10 @@ function(Backbone, TestModel, TestCollection, TestTmpl) {
             //     }
             // });
 
-            this.render();
+            
         },
-        render: function() {
-            this.$el.html(this.template());
+        render: function(collection) {
+            this.$el.html(this.template(collection.models[0]));
             return this;
         }
     });
