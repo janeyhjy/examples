@@ -6,7 +6,7 @@ define(['backbone'], function(Backbone) {
             "test/:q": "test"     // #help/1
         },
         home: function() {
-            require(['views/test', 'models/test'], function(TestView, TestModel) {
+            require(['views/test'], function(TestView) {
                 new TestView();  
             })
         },
