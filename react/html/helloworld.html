@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="../bower_components/react/react.min.js"></script>
+    <script src="../bower_components/react/react-dom.js"></script>
+    <!-- <script src="../bower_components/browser.min.js"></script> -->
+  </head>
+  <body>
+    <img src="http://mmbiz.qpic.cn/mmbiz/gJsyB6mAvxnd2iaOb4lthEa0e35suF3YfOvAK9ULhwa0steKTYG92z9IDaZdjGxh43bQic4vTSqX53YTZHVKmygw/0" />
+    <div id="example"></div>
+    <a href='' onclick=alert(/xss/) '' >testLink</a>
+    <a href=''><img src=# onerror=alert(/xss2/) />testLink</a>
+    <!-- <script type="text/babel">
+      React.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+      );
+    </script> -->
+    <!-- React without jsx  -->
+    <!-- <script type="text/javascript">
+      var Hello = React.createClass({
+        displayName: 'Hello',
+        render: function() {
+          return React.createElement("div", null, "Hello ", this.props.name);
+        }
+      });
+
+      ReactDOM.render(
+        React.createElement(Hello, {name: "World"}),
+        document.getElementById('example')
+      );
+    </script> -->
+    <script src="../build/js/helloworld.js"></script>
+  </body>
+</html>

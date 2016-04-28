@@ -1,0 +1,14 @@
+{
+  "name": "ES6",
+  "version": "0.0.0",
+  "description": "Test ES6",
+  "main": "index.js",
+  "author": "Janey",
+  "license": "BSD",
+  "devDependencies": {
+    "babel": "^6.0.0"
+  },
+  "dependencies": {
+    
+  }
+}

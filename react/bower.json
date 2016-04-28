@@ -1,0 +1,21 @@
+{
+  "name": "React",
+  "version": "0.0.1",
+  "keywords": [
+    "react"
+  ],
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "0.14.7",
+    "marked": "0.3.5"
+  }
+}
