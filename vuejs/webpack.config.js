@@ -1,49 +1,49 @@
 var webpack = require("webpack");
-//
-// // returns a Compiler instance
-// var compiler = webpack({
-//     // configuration
-//     source: 'webpackjs'
-//
-// });
-//
-// compiler.run(function(err, stats) {
-//   cosnole.log('run', stats);
-//   // ...
-// });
-// // or
-// var watch = compiler.watch({ // watch options:
-//   // aggregateTimeout: 300, // wait so long for more changes
-//   poll: true // use polling instead of native watchers
-//   // pass a number to set the polling interval
-// }, function(err, stats) {
-//   cosnole.log('watch', stats);
-//   // ...
-// });
-//
-// watch.close(function(err, stats) {
-//   console.log('close..............');
-// });
+var fs = require('fs')
+var path = require('path')
+function getEntry() {
+  srcDir = ''
+  var jsPath = path.resolve(srcDir, 'js');
+  var dirs = fs.readdirSync(jsPath);
+  var matchs = [], files = {};
+  dirs.forEach(function (item) {
+    matchs = item.match(/(.+)\.js$/);
+    if (matchs) {
+      files[matchs[1]] = path.resolve(srcDir, 'js', item);
+    }
+  });
+  return files;
+}
 module.exports = {
-  entry: ['./webpackjs/coffee.coffee'],
+  entry: getEntry(),
   output: {
-    path: __dirname + "/build/webpackjs/",//打包文件存放的绝对路径
-    // publicPath: __dirname + "/build/webpackjs/public",//网站运行时的访问路径
+    path: __dirname + "/build/dist/",//打包文件存放的绝对路径
+    publicPath: __dirname + "/build/public/",//网站运行时的访问路径
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.coffee', '.js', '.jsx']
+    extensions: ['', '.js', '.vue']
   },
   module: {
     loaders: [
+      { test: /\.vue$/, loader: "vue"},
       { test: /\.coffee$/, loader: "coffee-loader" },
-      { test: /\.scss$/, loader: "style-loader!css-loader!scss-loader"},
-      { test: /\.js$/, loader: "react-hot!jsx-loader?harmony"},
-      { test: /\.(css)$/, loader: "style-loader!css_loader"},
-      { test: /\.(png|jpg)$/, loader: "url-loader?limit=8192"}
+      { test: /\.js$/, loader: "babel", exclude: /node_modules/},
+      { test: /\.scss$/, loader: "style-loader!css-loader!scss-loader"}
     ]
   },
   resolve: {
     extensions: ["", ".web.coffee", ".web.js", ".coffee", ".js", ".scss", ".css"]
+  },
+  eslint: {
+    formatter: require('eslint-friendly-formatter'),
+    rules: {
+      'no-new': 0,
+      'no-unused-vars': 0
+    }
+  },
+  babel: {
+    presets: ['es2015'],//es6转es5
+    plugins: ['transform-runtime']
   }
 }
