@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Vuejs Router</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Router</h1>
+      <a v-link="{path: '/page1'}">page1</a>
+      <a v-link="{path: '/page2'}">page2</a>
+      <a v-link="{path: '/page3'}">empty page3</a>
+      <a v-link="{path: '/page3/page1'}">page3</a>
+      <a v-link="{path: '/user/janey'}">user</a>
+      <button v-tap="">点击事件</button>
+      <div>
+        <p>当前路径: {{$route.path}}</p>
+        <p>当前路由参数: {{$route.params | json}}</p>
+      </div>
+      <router-view></router-view>
+    </div>
+    <script src="build/dist/router.js"></script>
+    <script src="build/dist/1.1.js"></script>
+  </body>
+</html>
