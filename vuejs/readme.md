@@ -1,9 +1,12 @@
-## webpack
-+ 安装
+##  安装webpack
 ```
 npm install webpack -g
 ```
-+ 运行
+## 安装依赖
+```
+npm install
+```
+## 合并打包
 ```
 webpack
 ```

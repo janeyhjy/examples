@@ -12,14 +12,14 @@
       <a v-link="{path: '/page3'}">empty page3</a>
       <a v-link="{path: '/page3/page1'}">page3</a>
       <a v-link="{path: '/user/janey'}">user</a>
-      <button v-tap="">点击事件</button>
+      <button>点击事件</button>
       <div>
         <p>当前路径: {{$route.path}}</p>
         <p>当前路由参数: {{$route.params | json}}</p>
       </div>
       <router-view></router-view>
     </div>
-    <script src="build/dist/router.js"></script>
-    <script src="build/dist/1.1.js"></script>
+    <script src="../build/dist/router.js"></script>
+    <script src="../build/dist/1.1.js"></script>
   </body>
 </html>
