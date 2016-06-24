@@ -18,7 +18,7 @@ module.exports = {
   entry: getEntry(),
   output: {
     path: __dirname + "/build/dist/",//打包文件存放的绝对路径
-    // publicPath: __dirname + "/build/public/",//网站运行时的访问路径
+    publicPath: "/examples/vuejs/build/dist/",//网站运行时的访问路径
     filename: '[name].js'
   },
   module: {
