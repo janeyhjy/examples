@@ -1,0 +1,27 @@
+.yuan-icon-base() {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.213333rem;
+    height: 0.213333rem;
+    padding-right: .08rem; /* 6/75 */
+  }
+}
+
+.red-yuan-icon() {
+  .yuan-icon-base;
+
+  &::before {
+    background: url('../images/template2_sum_icon.png') no-repeat;
+    background-size: contain;
+  }
+}
+
+.grey-yuan-icon() {
+  .yuan-icon-base;
+
+  &::before {
+    background: url('../images/sum_list_icon.png') no-repeat;
+    background-size: contain;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../styles/mixins.less';
+@import 'variables';
+
+@btnDefaultColor: @lightBlack;
+@btnDefaultBackgroundColor: @white;
+@btnDefaultBorderColor: @grey;
+
+@btnDangerColor: @lightRed;
+@btnDangerBackgroundColor: @white;
+@btnDangerBorderColor: @lightRed;
+
+.btn {
+  .font-size(14px);
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: .2rem .4rem;
+  border-radius: 4px;
+}
+
+.btn-default {
+  color: @btnDefaultColor;
+  background-color: @btnDefaultBackgroundColor;
+  border: 1px solid @btnDefaultBorderColor;
+}
+
+.btn-danger {
+  color: @btnDangerColor;
+  background-color: @btnDangerBackgroundColor;
+  border: 1px solid @btnDangerBorderColor;
+}
