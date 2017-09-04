@@ -1,7 +1,7 @@
 <?php
 /*
 需下载wkhtmltox工具: https://github.com/wkhtmltopdf/wkhtmltopdf
-依赖需要安装: https://github.com/openlabs/docker-wkhtmltopdf/blob/master/Dockerfile#L9-L11
+docker中运行需要安装依赖: https://github.com/openlabs/docker-wkhtmltopdf/blob/master/Dockerfile#L9-L11
 linux中文乱码: windows c:\Windows\fonts\simsun.ttc拷贝到linux服务器/usr/share/fonts/
 */
 $wkhtmltoimage = '/wkhtmltox/bin/wkhtmltoimage';
