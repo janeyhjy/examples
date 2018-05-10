@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'customers',
-    loadChildren: 'app/customers/customers.module#CustomersModule'
+    loadChildren: 'app/pages/customers/customers.module#CustomersModule'
   }
 ];
 

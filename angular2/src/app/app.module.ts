@@ -5,17 +5,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { NavComponent } from './commons/nav/nav.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NavComponent } from './components/nav/nav.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+// import { PipPipe } from './test/pip.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    // PipPipe
   ],
   imports: [
     BrowserModule,
