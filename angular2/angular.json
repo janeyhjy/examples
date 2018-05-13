@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/lib-flexible/flexible.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -78,7 +80,8 @@
             "styles": [
               "styles.less"
             ],
-            "scripts": [],
+            "scripts": [
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

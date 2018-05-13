@@ -10,6 +10,7 @@ import { NavComponent } from './components/nav/nav.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './pages/home/home.component';
 // import { PipPipe } from './test/pip.pipe';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AuthGuard } from './auth.guard';
     AppComponent,
     LoginComponent,
     NavComponent,
+    HomeComponent,
     // PipPipe
   ],
   imports: [

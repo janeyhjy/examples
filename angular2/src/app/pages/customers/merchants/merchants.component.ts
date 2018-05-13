@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-merchants',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MerchantsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    // this.activatedRoute.snapshot.params; // router params
+    // this.activatedRoute.snapshot.queryParams; //url params
   }
 
 }
