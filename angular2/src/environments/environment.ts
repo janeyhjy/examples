@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://192.168.0.106:8123'
+  env: 'dev',
+  baseUrl: 'http://sandbox.192.168.0.106:8123'
 };
 
 /*

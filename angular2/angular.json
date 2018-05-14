@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular2",
+            "outputPath": "../../../nginx-1.13.11/angular2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,7 +30,8 @@
               "src/styles.less"
             ],
             "scripts": [
-              "./node_modules/lib-flexible/flexible.js"
+              "./node_modules/lib-flexible/flexible.js",
+              "./node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {
@@ -39,6 +40,23 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
                 }
               ],
               "optimization": true,
@@ -61,6 +79,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular2:build:production"
+            },
+            "staging": {
+              "browserTarget": "angular2:build:staging"
             }
           }
         },

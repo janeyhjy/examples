@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params, NavigationStart, NavigationEnd } from '@angular/router';
 import { HttpParams } from '@angular/common/http';
 import { HttpService } from './http.service';
+import { api } from './utils/api.config';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,12 @@ export class AppComponent implements OnInit{
   constructor (
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private httpService: HttpService
+    private httpService: HttpService,
+    // private api: Api
   ) { }
 
   ngOnInit() {
+    console.log('enum.....', api);
     console.log('app init........................................................');
     this.httpService.get('/api/testGet', {a:1}).subscribe({
       next(res) {
@@ -48,5 +51,17 @@ export class AppComponent implements OnInit{
         return;
       }
     });
+
+    //test code---------------------------------------------------------------------------------------------
+    // set
+    // let pets = new Set(["Cat", "Dog", "Hamster"]);
+    // pets["species"] = "mammals";
+    // console.log('pets===============================', pets);
+    // for (let pet in pets) {
+    //   console.log('pets keys========================', pet); // "species"
+    // }
+    // for (let pet of pets) {
+    //   console.log('pet values=======================', pet); // "Cat", "Dog", "Hamster"
+    // }
   }
 }

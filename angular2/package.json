@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 192.168.0.106 --port 4200",
-    "build": "ng build",
+    "start": "ng serve --host 192.168.0.106 --port 4200 --base-href /",
+    "build": "ng build --base-href / --prod",
+    "staging": "ng build --base-href / --configuration=staging",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +23,7 @@
     "@angular/router": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
     "lib-flexible": "^0.3.2",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

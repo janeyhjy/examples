@@ -87,8 +87,7 @@ export class HttpService {
     
     const queryArray: Array<string> = Object.keys(params).map(key => {
       if (params[key] === undefined || params[key] === '') return '';
-      return encodeURIComponent(key) + '=' +
-        encodeURIComponent(params[key])
+      return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
     });
 
     for (let i = 0; i < queryArray.length; i++) {
