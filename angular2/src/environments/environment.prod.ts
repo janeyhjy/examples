@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  env: 'prod',
+  baseUrl: 'http://www.baidu.com'
 };

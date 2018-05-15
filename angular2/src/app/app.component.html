@@ -2,8 +2,17 @@
   Title
 </h1>
 
-<button routerLink="/customers">Customers</button>
+<button routerLink="/customers">Customers/Users</button>
+<button routerLink="/customers/merchants">Customers/Merchants</button>
+<button routerLink="/login">登录</button>
 <button routerLink="">Home</button>
 
+<!-- error link -->
+Error Link
+<div><a [routerLink]="[ '/path', '1', '2', {details: true} ]">routeParam</a></div>
+<div><a [routerLink]="[ '/path', { matrixParam: 'value' } ]">matrixParam</a></div>
+<div><a [routerLink]="[ '/path' ]" [queryParams]="{ page: 1 }">queryParams</a></div>
+<div><a [routerLink]="[ '/path' ]" fragment="anchor">fragment</a></div>
+<div><a [routerLink]="[ '/customers/merchants' ]" routerLinkActive="active">routerLinkActive</a></div>
 <router-outlet></router-outlet>
 
