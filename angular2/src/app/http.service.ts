@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { catchError, map, tap, retry } from 'rxjs/operators';
 import { Observable, throwError, of } from 'rxjs';
 import { environment } from '../environments/environment';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/x-www-form-urlencoded',
-    "Access-Control-Allow-Origin": "*"
+const headers = new HttpHeaders({
+    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    // 'Content-Type': 'application/json'
   })
 };
 
@@ -34,7 +33,11 @@ export class HttpService {
   }
 
   post (url: string = '', params: object = {}, commonErrorHandle: boolean = false): Observable<any> {
-    return this.httpClient.post(environment.baseUrl + url, JSON.stringify(params)).pipe(
+    //以application/x-www-form-urlencoded格式传参，需奖参数拼接成 `a=b&c=d` 格式, 默认为aplication/json格式
+    const queryString = this.queryString(params);
+    return this.httpClient.post(environment.baseUrl + url, queryString, {
+      headers: headers
+    }).pipe(
       tap(res => {
         return res;
       }),
@@ -83,6 +86,7 @@ export class HttpService {
   }
 
   private queryString(params: object): string {
+    if (!params) return '';
     const newQueryArray: Array<string> = [];
     
     const queryArray: Array<string> = Object.keys(params).map(key => {

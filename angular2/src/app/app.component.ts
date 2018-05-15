@@ -29,10 +29,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    const params = {
-      "code": 1
-    }
-    this.httpService.post('/multicard/getLucyList.htm;params1=value1;params2=value2', params).subscribe(
+    this.httpService.post('/multicard/getLucyList.htm;params1=value1;params2=value2').subscribe(
       response => {
         console.log('post *****************', response)
       },
