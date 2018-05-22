@@ -15,8 +15,7 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    const code = this.activatedRoute.snapshot.queryParams.code
+    const code = this.activatedRoute.snapshot.queryParams.code;//url 参数
     const params = {
       code: code
     }

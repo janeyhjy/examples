@@ -1,5 +1,14 @@
-<div>
-  <ul>
-    <li>aa</li>
+<div class="menu-container" #menuComponent>
+  <ul class="menu-list" *ngIf="menus.length > 0">
+    <li *ngFor="let menu of menus; let idx1 = index;" class="menu-item menu-item-0" [ngClass]="{'actived': menu.actived}" (click)="clickMenu($event, idx1, menu)">
+      <span>{{menu.name}}</span>
+      <i class="icon iconfont icon-fangxiang" [@rotate]="menu.actived ? '90': '0'"></i>
+      <ul class="sub-menu" *ngIf="menu.subMenus && menu.subMenus.length > 0" [@toggle]="menu.actived ? 'expanded': 'collapsed'">
+        <li *ngFor="let subMenu of menu.subMenus; let idx2 = index" class="menu-item-{{idx2}}" (click)="clickSubMenu($event, idx2, menu)">
+          <a routerLink="{{subMenu.link}}" *ngIf="subMenu.type === 'link'">{{subMenu.name}}</a>
+        </li>
+      </ul>
+    </li>
   </ul>
+  <!-- [ngClass]="{'active': menu.actived}" -->
 </div>

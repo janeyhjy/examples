@@ -49,6 +49,10 @@ export class AppComponent implements OnInit{
       }
     });
 
+    setTimeout(function() {
+      console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+    }, 5000);
+
     //test code---------------------------------------------------------------------------------------------
     // set
     // let pets = new Set(["Cat", "Dog", "Hamster"]);

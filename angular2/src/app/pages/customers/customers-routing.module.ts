@@ -8,6 +8,11 @@ import { MerchantsComponent } from './merchants/merchants.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'merchants',
+    pathMatch: 'full'
+  },
+  {
+    path: 'users',
     component: UsersComponent,
     // canActivate: [AuthGuard]
   },
