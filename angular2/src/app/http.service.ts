@@ -7,8 +7,7 @@ import { environment } from '../environments/environment';
 const headers = new HttpHeaders({
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     // 'Content-Type': 'application/json'
-  })
-};
+})
 
 @Injectable({
   providedIn: 'root'
